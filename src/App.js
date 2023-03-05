@@ -1,11 +1,11 @@
-import React, {useRef, useState, useEffect, Suspense} from 'react';
+import React, {useRef, useState, Suspense} from 'react';
 import './App.css';
 import * as THREE from 'three';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 import Roboto from './assets/Roboto_Bold.json';
 import {TextGeometry} from 'three/examples/jsm/geometries/TextGeometry';
-import { OrbitControls, useVideoTexture, useTexture } from '@react-three/drei';
+import { useVideoTexture } from '@react-three/drei';
 
 extend({TextGeometry})
 
@@ -72,11 +72,8 @@ function MonitorStand(props) {
 
 function PowerButton({position, isOn, setIsOn}) {
   const buttonColor = !isOn ? 'red' : 'green';
-  var a = new Audio('video.mp4');
   const handleClick = () => {
-    
     setIsOn(!isOn);
-
   };
 
   
